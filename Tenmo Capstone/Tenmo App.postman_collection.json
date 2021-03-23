@@ -1,0 +1,386 @@
+{
+	"info": {
+		"_postman_id": "1938fda9-4fae-44e2-b273-87585173b612",
+		"name": "Tenmo App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List of accounts for user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiYXV0aCI6IlJPTEVfUk9MRV9VU0VSIiwiZXhwIjoxNjEyNDgwODAyfQ.nJiF0-wv6CJ_JZOJ9p2Z_G0olz2IyDjLv3FRFCARMBErfxlnTaycOEo0UhEU48K9CtFhYdLjg_Sj0mbUC1XLJQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic d34cee9c-0f82-4a4a-b826-95c4a8424ffe",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/account/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login as 'user'",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiYXV0aCI6IlJPTEVfUk9MRV9VU0VSIiwiZXhwIjoxNjEyNDgwODAyfQ.nJiF0-wv6CJ_JZOJ9p2Z_G0olz2IyDjLv3FRFCARMBErfxlnTaycOEo0UhEU48K9CtFhYdLjg_Sj0mbUC1XLJQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic d34cee9c-0f82-4a4a-b826-95c4a8424ffe",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"user\",\n    \"password\" : \"password\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login as 'admin'",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiYXV0aCI6IlJPTEVfUk9MRV9VU0VSIiwiZXhwIjoxNjEyNDgwODAyfQ.nJiF0-wv6CJ_JZOJ9p2Z_G0olz2IyDjLv3FRFCARMBErfxlnTaycOEo0UhEU48K9CtFhYdLjg_Sj0mbUC1XLJQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic d34cee9c-0f82-4a4a-b826-95c4a8424ffe",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"admin\",\n    \"password\" : \"password\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Make account deposit for 'user'",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiYXV0aCI6IlJPTEVfUk9MRV9VU0VSIiwiZXhwIjoxNjEyNDgwODAyfQ.nJiF0-wv6CJ_JZOJ9p2Z_G0olz2IyDjLv3FRFCARMBErfxlnTaycOEo0UhEU48K9CtFhYdLjg_Sj0mbUC1XLJQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic d34cee9c-0f82-4a4a-b826-95c4a8424ffe",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\n        \"accountId\": 1,\n        \"userId\": 1\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/account/deposit?depositAmount=100",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						"deposit"
+					],
+					"query": [
+						{
+							"key": "depositAmount",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Make account withdraw for 'user'",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiYXV0aCI6IlJPTEVfUk9MRV9VU0VSIiwiZXhwIjoxNjEyNDgwODAyfQ.nJiF0-wv6CJ_JZOJ9p2Z_G0olz2IyDjLv3FRFCARMBErfxlnTaycOEo0UhEU48K9CtFhYdLjg_Sj0mbUC1XLJQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic d34cee9c-0f82-4a4a-b826-95c4a8424ffe",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\n        \"accountId\": 1,\n        \"userId\": 1\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/account/withdraw?withdrawAmount=100",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						"withdraw"
+					],
+					"query": [
+						{
+							"key": "withdrawAmount",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View balance for 'user'",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiYXV0aCI6IlJPTEVfUk9MRV9VU0VSIiwiZXhwIjoxNjEyNDgwODAyfQ.nJiF0-wv6CJ_JZOJ9p2Z_G0olz2IyDjLv3FRFCARMBErfxlnTaycOEo0UhEU48K9CtFhYdLjg_Sj0mbUC1XLJQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic d34cee9c-0f82-4a4a-b826-95c4a8424ffe",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\n        \"accountId\": 1,\n        \"userId\": 1\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/account/1/balance",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						"1",
+						"balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View single account",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiYXV0aCI6IlJPTEVfUk9MRV9VU0VSIiwiZXhwIjoxNjEyNDgwODAyfQ.nJiF0-wv6CJ_JZOJ9p2Z_G0olz2IyDjLv3FRFCARMBErfxlnTaycOEo0UhEU48K9CtFhYdLjg_Sj0mbUC1XLJQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic d34cee9c-0f82-4a4a-b826-95c4a8424ffe",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/account/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

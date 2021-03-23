@@ -1,0 +1,43 @@
+{
+  "name": "final-vue-capstone-seed",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "test:e2e": "vue-cli-service test:e2e",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/vue-fontawesome": "^2.0.2",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.6.0",
+    "bootstrap-vue": "^2.21.2",
+    "buefy": "^0.9.4",
+    "core-js": "^2.6.5",
+    "google-fonts-webpack-plugin": "^0.4.4",
+    "stringify": "^5.2.0",
+    "vue": "^2.6.12",
+    "vue-moment": "^4.1.0",
+    "vue-router": "^3.0.3",
+    "vue-star-rating": "^1.7.0",
+    "vue-stringify": "^0.1.2",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.9.0",
+    "@vue/cli-plugin-e2e-cypress": "^3.9.0",
+    "@vue/cli-plugin-eslint": "^3.9.0",
+    "@vue/cli-plugin-unit-mocha": "^3.9.0",
+    "@vue/cli-service": "^3.9.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-eslint": "^10.0.1",
+    "chai": "^4.1.2",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "vue-template-compiler": "^2.6.12"
+  }
+}

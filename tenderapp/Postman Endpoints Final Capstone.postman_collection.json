@@ -1,0 +1,832 @@
+{
+	"info": {
+		"_postman_id": "c1fbc508-03cd-4bab-afa1-1913b97ca53e",
+		"name": "Final Capstone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Actions",
+			"item": [
+				{
+					"name": "Register User Duplicate Username",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"username\": \"user\",\n        \"password\": \"TechElevator\",\n        \"confirmPassword\": \"TechElevator\",\n        \"role\": \"user\",\n        \"firstName\": \"test\",\n        \"lastName\": \"test\",\n        \"email\": \"test@testuser.com\"\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login valid user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"username\": \"user\",\n        \"password\": \"password\"\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login invalid password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"username\": \"user\",\n        \"password\": \"password12\"\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Valid User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"username\": \"test\",\n        \"password\": \"TechElevator1\",\n        \"confirmPassword\": \"TechElevator1\",\n        \"role\": \"user\",\n        \"firstName\": \"test\",\n        \"lastName\": \"test\",\n        \"email\": \"test@testuser.com\"\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register User Invalid Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"username\": \"test1\",\n        \"password\": \"TechElevator\",\n        \"confirmPassword\": \"TechElevator\",\n        \"role\": \"user\",\n        \"firstName\": \"test\",\n        \"lastName\": \"test\",\n        \"email\": \"test@testuser.com\"\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": 1,\n        \"username\": \"users\",\n        \"firstName\": \"user1\",\n        \"lastName\": \"name1\",\n        \"email\": \"user1@user.com\",\n        \"userDetails\": {\n            \"userId\": 1,\n            \"address\": \"413 N Market St\",\n            \"city\": \"Wilmington\",\n            \"state\": \"DE\",\n            \"zip\": 19801,\n            \"default_radius\": 16100,\n            \"activeCategoryId\": [\n                1,\n                5,\n                7,\n                8,\n                21\n            ],\n            \"searchCategories\": \"American, BBQ, Chinese, Steakhouse\"\n        }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Invite Actions",
+			"item": [
+				{
+					"name": "Get Invitation by user ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"location\": \"Charlotte\",\n        \"radius\": \"5000\",\n        \"creatorId\": \"1\",\n        \"deadline\": \"2021-03-07 16:00\",\n        \"reservationDate\": \"03/13/2021 6:00pm\",\n        \"invitees\": [{\n            \"userId\": 1,\n            \"firstName\": \"Will\",\n            \"lastName\": \"Gladnick\",\n            \"email\": \"bigwillystyle@aol.com\"\n        },{\n            \"firstName\": \"Mike\",\n            \"lastName\": \"Uhlman\",\n            \"email\": \"Mikeistheman@gmail.com\"\n        },{\n            \"firstName\": \"Emily\",\n            \"lastName\": \"Charleson\",\n            \"email\": \"emily@yahoo.com\"\n        }\n        ],\n        \"restaurantChoices\": [{\n            \"yelpId\": \"5IFqqWJTaPNoY2ZgRlX73w\"\n\n        },\n        {\n            \"yelpId\": \"ifEkf8JxP3RCBeszcIGLww\"\n        }\n        ]\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/invitation/user/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"invitation",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Invitation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"location\": \"Charlotte\",\n        \"inviteName\": \"Test 2 Invite\",\n        \"radius\": \"16100\",\n        \"creatorId\": \"1\",\n        \"deadline\": \"2021-03-07 16:00\",\n        \"reservationDate\": \"2021-03-17 18:30\",\n        \"invitees\": [{\n            \"userId\": 1,\n            \"name\": \"Will Gladnick\",\n            \"email\": \"bigwillystyle@aol.com\"\n        },{\n            \"name\": \"Mike\",\n            \"email\": \"Mikeistheman@gmail.com\"\n        },{\n            \"name\": \"Emily Charlson\",\n            \"email\": \"emily@yahoo.com\"\n        }\n        ],\n        \"restaurantChoices\": [{\n            \"yelpId\": \"5IFqqWJTaPNoY2ZgRlX73w\"\n\n        },\n        {\n            \"yelpId\": \"ifEkf8JxP3RCBeszcIGLww\"\n        }\n        ]\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/invitation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"invitation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Invitation by invitation ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"location\": \"Charlotte\",\n        \"radius\": \"5000\",\n        \"creatorId\": \"1\",\n        \"deadline\": \"2021-03-07 16:00\",\n        \"reservationDate\": \"03/13/2021 6:00pm\",\n        \"invitees\": [{\n            \"userId\": 1,\n            \"firstName\": \"Will\",\n            \"lastName\": \"Gladnick\",\n            \"email\": \"bigwillystyle@aol.com\"\n        },{\n            \"firstName\": \"Mike\",\n            \"lastName\": \"Uhlman\",\n            \"email\": \"Mikeistheman@gmail.com\"\n        },{\n            \"firstName\": \"Emily\",\n            \"lastName\": \"Charleson\",\n            \"email\": \"emily@yahoo.com\"\n        }\n        ],\n        \"restaurantChoices\": [{\n            \"yelpId\": \"5IFqqWJTaPNoY2ZgRlX73w\"\n\n        },\n        {\n            \"yelpId\": \"ifEkf8JxP3RCBeszcIGLww\"\n        }\n        ]\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/invitation/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"invitation",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Invitee by invitation ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"location\": \"Charlotte\",\n        \"radius\": \"5000\",\n        \"creatorId\": \"1\",\n        \"deadline\": \"2021-03-07 16:00\",\n        \"reservationDate\": \"03/13/2021 6:00pm\",\n        \"invitees\": [{\n            \"userId\": 1,\n            \"firstName\": \"Will\",\n            \"lastName\": \"Gladnick\",\n            \"email\": \"bigwillystyle@aol.com\"\n        },{\n            \"firstName\": \"Mike\",\n            \"lastName\": \"Uhlman\",\n            \"email\": \"Mikeistheman@gmail.com\"\n        },{\n            \"firstName\": \"Emily\",\n            \"lastName\": \"Charleson\",\n            \"email\": \"emily@yahoo.com\"\n        }\n        ],\n        \"restaurantChoices\": [{\n            \"yelpId\": \"5IFqqWJTaPNoY2ZgRlX73w\"\n\n        },\n        {\n            \"yelpId\": \"ifEkf8JxP3RCBeszcIGLww\"\n        }\n        ]\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/invitation/invite/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"invitation",
+								"invite",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Invitee Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \n            \"userId\": 1,\n            \"uniqueId\": \"aDUDYGtlI6cUSOY\",\n            \"firstName\": \"Will\",\n            \"lastName\": \"Gladnick\",\n            \"email\": \"bigwillystyle@aol.com\",\n            \"isAttending\": \"Attending\",\n            \"hasVoted\": \"true\"\n        \n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/invitation/invitee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"invitation",
+								"invitee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get restaurants by invitation ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"location\": \"Charlotte\",\n        \"radius\": \"5000\",\n        \"creatorId\": \"1\",\n        \"deadline\": \"2021-03-07 16:00\",\n        \"reservationDate\": \"03/13/2021 6:00pm\",\n        \"invitees\": [{\n            \"userId\": 1,\n            \"firstName\": \"Will\",\n            \"lastName\": \"Gladnick\",\n            \"email\": \"bigwillystyle@aol.com\"\n        },{\n            \"firstName\": \"Mike\",\n            \"lastName\": \"Uhlman\",\n            \"email\": \"Mikeistheman@gmail.com\"\n        },{\n            \"firstName\": \"Emily\",\n            \"lastName\": \"Charleson\",\n            \"email\": \"emily@yahoo.com\"\n        }\n        ],\n        \"restaurantChoices\": [{\n            \"yelpId\": \"5IFqqWJTaPNoY2ZgRlX73w\"\n\n        },\n        {\n            \"yelpId\": \"ifEkf8JxP3RCBeszcIGLww\"\n        }\n        ]\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/invitation/restaurant/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"invitation",
+								"restaurant",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Thumbs Down Restaurant",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \"inviteId\": 13,\n        \"yelpId\": \"ifEkf8JxP3RCBeszcIGLww\",\n        \"uniqueId\": \"ZXrQKMlyZoEa5Zw\"\n\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/invitation/thumbsdown",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"invitation",
+								"thumbsdown"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Thumbs Up Restaurant",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \"inviteId\": 3,\n        \"yelpId\": \"5IFqqWJTaPNoY2ZgRlX73w\",\n        \"uniqueId\": \"rRDABSdliLRjFZb\"\n\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/invitation/thumbsup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"invitation",
+								"thumbsup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Invitee by Unique ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"location\": \"Charlotte\",\n        \"radius\": \"5000\",\n        \"creatorId\": \"1\",\n        \"deadline\": \"2021-03-07 16:00\",\n        \"reservationDate\": \"03/13/2021 6:00pm\",\n        \"invitees\": [{\n            \"userId\": 1,\n            \"firstName\": \"Will\",\n            \"lastName\": \"Gladnick\",\n            \"email\": \"bigwillystyle@aol.com\"\n        },{\n            \"firstName\": \"Mike\",\n            \"lastName\": \"Uhlman\",\n            \"email\": \"Mikeistheman@gmail.com\"\n        },{\n            \"firstName\": \"Emily\",\n            \"lastName\": \"Charleson\",\n            \"email\": \"emily@yahoo.com\"\n        }\n        ],\n        \"restaurantChoices\": [{\n            \"yelpId\": \"5IFqqWJTaPNoY2ZgRlX73w\"\n\n        },\n        {\n            \"yelpId\": \"ifEkf8JxP3RCBeszcIGLww\"\n        }\n        ]\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/invitation/invitee/rRDABSdliLRjFZb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"invitation",
+								"invitee",
+								"rRDABSdliLRjFZb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Vote",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \"inviteId\": 13,\n        \"yelpId\": \"ifEkf8JxP3RCBeszcIGLww\",\n        \"uniqueId\": \"ZXrQKMlyZoEa5Zw\"\n\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/invitation/removevote",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"invitation",
+								"removevote"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Yelp Actions",
+			"item": [
+				{
+					"name": "Get Reviews by Restaurant ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/restaurant/ifEkf8JxP3RCBeszcIGLww/reviews",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restaurant",
+								"ifEkf8JxP3RCBeszcIGLww",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Restaurant by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/restaurant/ifEkf8JxP3RCBeszcIGLww",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restaurant",
+								"ifEkf8JxP3RCBeszcIGLww"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get List of Restaurnts by location",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1d437b3e-b72b-4865-83b5-c9e53cec207a",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/restaurant/?address=\"1836 N Lincoln St wilmington de 19806\"&radius=500",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restaurant",
+								""
+							],
+							"query": [
+								{
+									"key": "address",
+									"value": "\"1836 N Lincoln St wilmington de 19806\""
+								},
+								{
+									"key": "radius",
+									"value": "500"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get list by category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1d437b3e-b72b-4865-83b5-c9e53cec207a",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/restaurant/category/?address=\"1836 N Lincoln St wilmington de 19806\"&radius=5000&category=mexican,chinese",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restaurant",
+								"category",
+								""
+							],
+							"query": [
+								{
+									"key": "address",
+									"value": "\"1836 N Lincoln St wilmington de 19806\""
+								},
+								{
+									"key": "radius",
+									"value": "5000"
+								},
+								{
+									"key": "category",
+									"value": "mexican,chinese"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get list of categories to search by",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get filtered list by categories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1d437b3e-b72b-4865-83b5-c9e53cec207a",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/restaurant/filter/?address=\"1836 N Lincoln St wilmington de 19806\"&radius=5000&categories=1,7,9",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restaurant",
+								"filter",
+								""
+							],
+							"query": [
+								{
+									"key": "address",
+									"value": "\"1836 N Lincoln St wilmington de 19806\""
+								},
+								{
+									"key": "radius",
+									"value": "5000"
+								},
+								{
+									"key": "categories",
+									"value": "1,7,9"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Yelp Direct API",
+			"item": [
+				{
+					"name": "Yelp Direct - Get Restaurant Reviews",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BSlG5RWR1DJPC4Zf4vabLNFi0YS5-qS2iXkrxpCSY-i02RQWrXuc9CBJtvkeW_EbgUPJ_8oNLscX_yvmu67cQ2HNLxxR6CwFGFoTiUlPsIsDEz-GRtHV88D7dBFBYHYx",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.yelp.com/v3/businesses/ifEkf8JxP3RCBeszcIGLww/reviews",
+							"protocol": "https",
+							"host": [
+								"api",
+								"yelp",
+								"com"
+							],
+							"path": [
+								"v3",
+								"businesses",
+								"ifEkf8JxP3RCBeszcIGLww",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Yelp Direct - Get List of Restaurants by Location",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BSlG5RWR1DJPC4Zf4vabLNFi0YS5-qS2iXkrxpCSY-i02RQWrXuc9CBJtvkeW_EbgUPJ_8oNLscX_yvmu67cQ2HNLxxR6CwFGFoTiUlPsIsDEz-GRtHV88D7dBFBYHYx",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.yelp.com/v3/businesses/search?categories=restaurants&location=\"1836 N Lincoln St wilmington de 19806\"&radius=500",
+							"protocol": "https",
+							"host": [
+								"api",
+								"yelp",
+								"com"
+							],
+							"path": [
+								"v3",
+								"businesses",
+								"search"
+							],
+							"query": [
+								{
+									"key": "categories",
+									"value": "restaurants"
+								},
+								{
+									"key": "location",
+									"value": "\"1836 N Lincoln St wilmington de 19806\""
+								},
+								{
+									"key": "radius",
+									"value": "500"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Yelp Direct - Get List of Restaurants by Location AND Category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BSlG5RWR1DJPC4Zf4vabLNFi0YS5-qS2iXkrxpCSY-i02RQWrXuc9CBJtvkeW_EbgUPJ_8oNLscX_yvmu67cQ2HNLxxR6CwFGFoTiUlPsIsDEz-GRtHV88D7dBFBYHYx",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.yelp.com/v3/businesses/search?categories=chinese,mexican&location=\"1836 N Lincoln St wilmington de 19806\"&radius=500",
+							"protocol": "https",
+							"host": [
+								"api",
+								"yelp",
+								"com"
+							],
+							"path": [
+								"v3",
+								"businesses",
+								"search"
+							],
+							"query": [
+								{
+									"key": "categories",
+									"value": "chinese,mexican"
+								},
+								{
+									"key": "location",
+									"value": "\"1836 N Lincoln St wilmington de 19806\""
+								},
+								{
+									"key": "radius",
+									"value": "500"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Yelp Direct - Get Restaurant Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BSlG5RWR1DJPC4Zf4vabLNFi0YS5-qS2iXkrxpCSY-i02RQWrXuc9CBJtvkeW_EbgUPJ_8oNLscX_yvmu67cQ2HNLxxR6CwFGFoTiUlPsIsDEz-GRtHV88D7dBFBYHYx",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.yelp.com/v3/businesses/ifEkf8JxP3RCBeszcIGLww",
+							"protocol": "https",
+							"host": [
+								"api",
+								"yelp",
+								"com"
+							],
+							"path": [
+								"v3",
+								"businesses",
+								"ifEkf8JxP3RCBeszcIGLww"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Blank On Purpose",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
